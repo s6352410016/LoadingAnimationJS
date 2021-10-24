@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, .8);
+        }
+        .animation{
+            width: 55px;
+            height: 55px;
+            border: 6px solid #ededed;
+            border-radius: 50%;
+            border-top-color: #000;
+            animation: spin 1s infinite linear;
+        }
+        @keyframes spin{
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="animation"></div>
+    </div>
+    <script>
+        window.onload = setInterval(() => {
+            document.querySelector('.container').style.display = 'none';
+        }, 3000);
+    </script>
+</body>
+</html>
